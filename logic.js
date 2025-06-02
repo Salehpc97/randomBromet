@@ -202,10 +202,32 @@
 
    // --- Gemini API Configuration ---
 
-   const GEMINI_API_KEY = "AIzaSyBK4ewwkX91HR0G8z4-hsyPlk3hLt6bLKQ"; 
-   const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
-
+   //const GEMINI_API_KEY = "AIzaSyBK4ewwkX91HR0G8z4-hsyPlk3hLt6bLKQ"; 
+   //const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
    // --- UI Text Translations ---
+   // js/config.js
+
+   async function generateContent(prompt) {
+    try {
+      const response = await fetch(window.CONFIG.PROXY_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt })
+      });
+  
+      if (!response.ok) throw new Error("API request failed");
+      return await response.json();
+    } catch (error) {
+      console.error("Error:", error);
+      return { error: error.message };
+    }
+  }
+  
+  // Usage example
+  generateContent("Explain quantum computing").then(data => {
+    console.log("AI Response:", data);
+  });
+  
    const uiStrings = {
        // Main Titles
        mainTitle: { ar: "🚀 مولد الأفكار الإبداعية 💡", en: "🚀 Creative Idea Generator 💡" },
@@ -372,15 +394,14 @@
        }
 
        const payload = {
-           contents: [{ role: "user", parts: [{ text: instructionPrompt }] }],
-           generationConfig: { 
-               maxOutputTokens: maxTokens,
-               temperature: temperature 
-           } 
-       };
+        prompt: instructionPrompt,  // نرسل الـ prompt فقط
+        maxTokens: maxTokens,      // معاملات الجيل
+        temperature: temperature
+        // (اختياري) يمكن إضافة أي معاملات أخرى يحتاجها البروكسي
+      };
 
        try {
-           const response = await fetch(GEMINI_API_URL, {
+           const response = await fetch('/api/gemini-proxy.js', {
                method: 'POST',
                headers: { 'Content-Type': 'application/json' },
                body: JSON.stringify(payload)
