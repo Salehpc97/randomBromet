@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate-key="pageTitle">مولد الأفكار الإبداعية بالذكاء الاصطناعي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"href="maincssfile.css">
+</head>
+<body class="antialiased">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-6 relative">
+             <div id="header-controls" class="absolute top-0 p-2 md:p-4 flex space-x-2">
+                <button id="language-toggle-btn" title="Switch Language" class="text-slate-300 hover:text-blue-400">
+                    <span id="lang-btn-text">EN</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block ml-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M7 2a1 1 0 011 1v1.332A6.993 6.993 0 0112.667 8H14a1 1 0 110 2h-1.333A6.993 6.993 0 018 15.668V17a1 1 0 11-2 0v-1.332A6.993 6.993 0 011.333 10H0a1 1 0 110-2h1.333A6.993 6.993 0 017 4.332V3a1 1 0 011-1zm10.667 8a4.993 4.993 0 00-4.33-4.952V8a1 1 0 00-2 0v2.048a4.993 4.993 0 004.33 4.952H18a1 1 0 100-2h-.333zM4.333 10a4.993 4.993 0 004.33 4.952V12a1 1 0 102 0V9.952A4.993 4.993 0 004.333 10z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <button id="user-account-btn" title="User Account" class="text-slate-300 hover:text-blue-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </button>
+            </div>
+            <h1 id="main-title" class="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-300 pt-16 md:pt-0">
+                🚀 مولد الأفكار الإبداعية 💡
+            </h1>
+            <p id="main-subtitle" class="mt-4 text-lg text-slate-400">
+                أطلق العنان لقوة الذكاء الاصطناعي واكتشف أفكارًا جديدة وملهمة!
+            </p>
+        </header>
+        <nav class="mb-10">
+            <ul class="flex items-center justify-center flex-wrap space-x-1 md:space-x-4 border-b-2 border-slate-700 pb-2">
+                <li><button data-category="art" data-category-ar="فن" data-category-en="Art" class="tab-button active text-lg md:text-xl font-semibold px-2 py-2">🎨 <span class="tab-text">فن</span></button></li>
+                <li><button data-category="images" data-category-ar="صور فوتوغرافية" data-category-en="Photography" class="tab-button text-lg md:text-xl font-semibold px-2 py-2">🖼️ <span class="tab-text">صور فوتوغرافية</span></button></li>
+                <li><button data-category="ad_images" data-category-ar="صور اعلانية" data-category-en="Ad Images" class="tab-button text-lg md:text-xl font-semibold px-2 py-2">📢 <span class="tab-text">صور اعلانية</span></button></li>
+                <li><button data-category="short_messages" data-category-ar="رسائل قصيرة" data-category-en="Short Messages" class="tab-button text-lg md:text-xl font-semibold px-2 py-2">✉️ <span class="tab-text">رسائل قصيرة</span></button></li>
+                <li><button data-category="articles" data-category-ar="مقالات" data-category-en="Articles" class="tab-button text-lg md:text-xl font-semibold px-2 py-2">📰 <span class="tab-text">مقالات</span></button></li>
+                <li><button data-category="programming" data-category-ar="برمجة" data-category-en="Programming" class="tab-button text-lg md:text-xl font-semibold px-2 py-2">💻 <span class="tab-text">برمجة</span></button></li>
+                <li><button data-category="video" data-category-ar="فيديو" data-category-en="Video" class="tab-button text-lg md:text-xl font-semibold px-2 py-2">🎬 <span class="tab-text">فيديو</span></button></li>
+                <li><button data-category="random" data-category-ar="أفكار عشوائية" data-category-en="Random Ideas" class="tab-button text-lg md:text-xl font-semibold px-2 py-2">🎲 <span class="tab-text">أفكار عشوائية</span></button></li>
+                <li><button data-category="explore" data-category-ar="استكشف" data-category-en="Explore" class="tab-button text-lg md:text-xl font-semibold px-2 py-2">🌍 <span class="tab-text">استكشف</span></button></li>
+                <li><button data-category="community" data-category-ar="المجتمع" data-category-en="Community" class="tab-button text-lg md:text-xl font-semibold px-2 py-2">💬 <span class="tab-text">المجتمع</span></button></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="app-content" class="card p-6 md:p-8 max-w-2xl mx-auto">
+                <div class="text-center mb-6">
+                    <h2 id="category-title" class="text-2xl font-semibold text-blue-400">فن</h2>
+                    <p id="category-description" class="text-slate-400">اضغط على الزر أدناه لتوليد فكرة جديدة بواسطة الذكاء الاصطناعي في هذا القسم.</p>
+                </div>
+                <div id="photographic-image-subcategories-container" class="hidden mb-6">
+                    <p id="photo-type-label" class="text-center text-slate-300 mb-3">اختر نوع الصورة الفوتوغرافية:</p>
+                    <div class="flex flex-wrap justify-center gap-2 mb-4">
+                        <button data-sub-category="cars" data-sub-category-ar="سيارات" data-sub-category-en="Cars" class="sub-category-button active py-2 px-4 rounded-md text-sm">🚗 <span class="sub-cat-text">سيارات</span></button>
+                        <button data-sub-category="fashion" data-sub-category-ar="الموضة" data-sub-category-en="Fashion" class="sub-category-button py-2 px-4 rounded-md text-sm">👚 <span class="sub-cat-text">الموضة</span></button>
+                        <button data-sub-category="macro" data-sub-category-ar="تصوير ماكرو" data-sub-category-en="Macro" class="sub-category-button py-2 px-4 rounded-md text-sm">🔬 <span class="sub-cat-text">تصوير ماكرو</span></button>
+                        <button data-sub-category="nature" data-sub-category-ar="الطبيعة" data-sub-category-en="Nature" class="sub-category-button py-2 px-4 rounded-md text-sm">🌳 <span class="sub-cat-text">الطبيعة</span></button>
+                        <button data-sub-category="universe" data-sub-category-ar="الكون" data-sub-category-en="Universe" class="sub-category-button py-2 px-4 rounded-md text-sm">🌌 <span class="sub-cat-text">الكون</span></button>
+                        <button data-sub-category="artistic_paintings" data-sub-category-ar="لوحات فنية" data-sub-category-en="Artistic Paintings" class="sub-category-button py-2 px-4 rounded-md text-sm">🖼️ <span class="sub-cat-text">لوحات فنية</span></button>
+                        <button data-sub-category="sports" data-sub-category-ar="رياضة" data-sub-category-en="Sports" class="sub-category-button py-2 px-4 rounded-md text-sm">⚽ <span class="sub-cat-text">رياضة</span></button>
+                        <button data-sub-category="travel" data-sub-category-ar="سفر" data-sub-category-en="Travel" class="sub-category-button py-2 px-4 rounded-md text-sm">✈️ <span class="sub-cat-text">سفر</span></button>
+                        <button data-sub-category="black_and_white" data-sub-category-ar="أبيض وأسود" data-sub-category-en="B&W" class="sub-category-button py-2 px-4 rounded-md text-sm">📷 <span class="sub-cat-text">أبيض وأسود</span></button>
+                        <button data-sub-category="still_life" data-sub-category-ar="طبيعة صامتة" data-sub-category-en="Still Life" class="sub-category-button py-2 px-4 rounded-md text-sm">🍎 <span class="sub-cat-text">طبيعة صامتة</span></button>
+                        <button data-sub-category="artistic_photography" data-sub-category-ar="تصوير فني" data-sub-category-en="Artistic Photo" class="sub-category-button py-2 px-4 rounded-md text-sm">🎨 <span class="sub-cat-text">تصوير فني</span></button>
+                        <button data-sub-category="technology_photo" data-sub-category-ar="التكنولوجيا" data-sub-category-en="Technology" class="sub-category-button py-2 px-4 rounded-md text-sm">🤖 <span class="sub-cat-text">التكنولوجيا</span></button>
+                        <button data-sub-category="cities" data-sub-category-ar="المدن" data-sub-category-en="Cities" class="sub-category-button py-2 px-4 rounded-md text-sm">🏙️ <span class="sub-cat-text">المدن</span></button>
+                        <button data-sub-category="architecture" data-sub-category-ar="العمارة" data-sub-category-en="Architecture" class="sub-category-button py-2 px-4 rounded-md text-sm">🏛️ <span class="sub-cat-text">العمارة</span></button>
+                        <button data-sub-category="food_photo" data-sub-category-ar="طعام" data-sub-category-en="Food" class="sub-category-button py-2 px-4 rounded-md text-sm">🍔 <span class="sub-cat-text">طعام</span></button>
+                        <button data-sub-category="animals" data-sub-category-ar="حيوانات" data-sub-category-en="Animals" class="sub-category-button py-2 px-4 rounded-md text-sm">🐾 <span class="sub-cat-text">حيوانات</span></button>
+                        <button data-sub-category="abstract" data-sub-category-ar="تجريدي" data-sub-category-en="Abstract" class="sub-category-button py-2 px-4 rounded-md text-sm">🌀 <span class="sub-cat-text">تجريدي</span></button>
+                        <button data-sub-category="portraits" data-sub-category-ar="بورتريه" data-sub-category-en="Portraits" class="sub-category-button py-2 px-4 rounded-md text-sm">👤 <span class="sub-cat-text">بورتريه</span></button>
+                        <button data-sub-category="industry" data-sub-category-ar="الصناعة" data-sub-category-en="Industry" class="sub-category-button py-2 px-4 rounded-md text-sm">🏭 <span class="sub-cat-text">الصناعة</span></button>
+                        <button data-sub-category="wars" data-sub-category-ar="مشاهد حربية" data-sub-category-en="War Scenes" class="sub-category-button py-2 px-4 rounded-md text-sm">⚔️ <span class="sub-cat-text">مشاهد حربية</span></button>
+                    </div>
+                    <div id="photo-advanced-filters-container" class="mt-4 space-y-3">
+                        <div class="filter-group">
+                            <label id="photo-realism-label" class="filter-label">الواقعية:</label>
+                            <div id="photo-realism-options" class="flex flex-wrap justify-center gap-2">
+                                <button data-filter-type="realism" data-value="realistic" data-text-ar="واقعي" data-text-en="Realistic" class="filter-option-button active py-1 px-3 text-xs">واقعي</button>
+                                <button data-filter-type="realism" data-value="hyperrealistic" data-text-ar="فائق الواقعية" data-text-en="Hyperrealistic" class="filter-option-button py-1 px-3 text-xs">فائق الواقعية</button>
+                                <button data-filter-type="realism" data-value="unrealistic" data-text-ar="غير واقعي" data-text-en="Unrealistic" class="filter-option-button py-1 px-3 text-xs">غير واقعي</button>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <div class="filter-group">
+                                <label for="photo-time-of-day-select" id="photo-time-label" class="filter-label">التوقيت:</label>
+                                <select id="photo-time-of-day-select" data-filter-type="time_of_day" class="form-select text-xs">
+                                    <option value="any_time" data-text-ar="أي وقت" data-text-en="Any Time" selected>أي وقت</option>
+                                    <option value="daytime" data-text-ar="النهار" data-text-en="Daytime">النهار</option>
+                                    <option value="nighttime" data-text-ar="الليل" data-text-en="Nighttime">الليل</option>
+                                    <option value="golden_hour" data-text-ar="الساعة الذهبية" data-text-en="Golden Hour">الساعة الذهبية</option>
+                                    <option value="twilight_dawn" data-text-ar="الغسق/الفجر" data-text-en="Twilight/Dawn">الغسق/الفجر</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="photo-season-select" id="photo-season-filter-container" class="filter-label">الموسم (للطبيعة/السفر):</label>
+                                <select id="photo-season-select" data-filter-type="season" class="form-select text-xs">
+                                    <option value="any_season" data-text-ar="أي موسم" data-text-en="Any Season" selected>أي موسم</option>
+                                    <option value="summer" data-text-ar="صيف" data-text-en="Summer">صيف</option>
+                                    <option value="winter" data-text-ar="شتاء" data-text-en="Winter">شتاء</option>
+                                    <option value="autumn" data-text-ar="خريف" data-text-en="Autumn">خريف</option>
+                                    <option value="spring" data-text-ar="ربيع" data-text-en="Spring">ربيع</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label id="photo-people-label" class="filter-label">الأشخاص:</label>
+                            <div id="photo-people-options" class="flex flex-wrap justify-center gap-2">
+                                <button data-filter-type="people" data-value="no_people" data-text-ar="بدون أشخاص" data-text-en="No People" class="filter-option-button active py-1 px-3 text-xs">بدون أشخاص</button>
+                                <button data-filter-type="people" data-value="with_people" data-text-ar="مع أشخاص" data-text-en="With People" class="filter-option-button py-1 px-3 text-xs">مع أشخاص</button>
+                            </div>
+                        </div>
+                        <div id="photo-audience-filter-container" class="filter-group hidden">
+                            <label id="photo-audience-label" class="filter-label">الجمهور:</label>
+                            <div id="photo-audience-options" class="flex flex-wrap justify-center gap-2">
+                                <button data-filter-type="audience" data-value="no_audience" data-text-ar="بدون جمهور" data-text-en="No Audience" class="filter-option-button active py-1 px-3 text-xs">بدون جمهور</button>
+                                <button data-filter-type="audience" data-value="with_audience" data-text-ar="مع جمهور" data-text-en="With Audience" class="filter-option-button py-1 px-3 text-xs">مع جمهور</button>
+                            </div>
+                        </div>
+                         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <div class="filter-group">
+                                <label for="photo-camera-angle-select" id="photo-angle-label" class="filter-label">زاوية الكاميرا:</label>
+                                <select id="photo-camera-angle-select" data-filter-type="camera_angle" class="form-select text-xs">
+                                    <option value="any_angle" data-text-ar="أي زاوية" data-text-en="Any Angle" selected>أي زاوية</option>
+                                    <option value="eye_level" data-text-ar="مستوى العين" data-text-en="Eye Level">مستوى العين</option>
+                                    <option value="wide_shot" data-text-ar="لقطة واسعة" data-text-en="Wide Shot">لقطة واسعة</option>
+                                    <option value="medium_shot" data-text-ar="لقطة متوسطة" data-text-en="Medium Shot">لقطة متوسطة</option>
+                                    <option value="close_up" data-text-ar="لقطة قريبة" data-text-en="Close-up">لقطة قريبة</option>
+                                    <option value="low_angle" data-text-ar="زاوية منخفضة" data-text-en="Low Angle">زاوية منخفضة</option>
+                                    <option value="high_angle" data-text-ar="زاوية مرتفعة" data-text-en="High Angle">زاوية مرتفعة</option>
+                                    <option value="birds_eye_view" data-text-ar="عين الطائر" data-text-en="Bird's Eye View">عين الطائر</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="photo-lighting-select" id="photo-lighting-label" class="filter-label">الإضاءة:</label>
+                                <select id="photo-lighting-select" data-filter-type="lighting" class="form-select text-xs">
+                                    <option value="any_lighting" data-text-ar="أي إضاءة" data-text-en="Any Lighting" selected>أي إضاءة</option>
+                                    <option value="natural_light" data-text-ar="طبيعية" data-text-en="Natural Light">طبيعية</option>
+                                    <option value="studio_light" data-text-ar="استوديو" data-text-en="Studio Light">استوديو</option>
+                                    <option value="soft_light" data-text-ar="ناعمة" data-text-en="Soft Light">ناعمة</option>
+                                    <option value="hard_light" data-text-ar="قاسية" data-text-en="Hard Light">قاسية</option>
+                                    <option value="dramatic_lighting" data-text-ar="درامية" data-text-en="Dramatic">درامية</option>
+                                    <option value="backlighting" data-text-ar="خلفية" data-text-en="Backlighting">خلفية</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <div class="filter-group">
+                                <label for="photo-colors-select" id="photo-colors-label" class="filter-label">الألوان:</label>
+                                <select id="photo-colors-select" data-filter-type="colors" class="form-select text-xs">
+                                    <option value="any_colors" data-text-ar="أي ألوان" data-text-en="Any Colors" selected>أي ألوان</option>
+                                    <option value="vibrant_colors" data-text-ar="ألوان زاهية" data-text-en="Vibrant Colors">ألوان زاهية</option>
+                                    <option value="muted_colors" data-text-ar="ألوان باهتة" data-text-en="Muted Colors">ألوان باهتة</option>
+                                    <option value="monochromatic_colors" data-text-ar="أحادي اللون (سيبيا)" data-text-en="Monochromatic (Sepia)">أحادي اللون (سيبيا)</option>
+                                    <option value="black_and_white_colors" data-text-ar="أبيض وأسود" data-text-en="Black & White">أبيض وأسود</option>
+                                </select>
+                            </div>
+                             <div class="filter-group">
+                                <label for="photo-style-select" id="photo-style-label" class="filter-label">نمط/مزاج الصورة:</label>
+                                <select id="photo-style-select" data-filter-type="style_mood" class="form-select text-xs">
+                                    <option value="any_style" data-text-ar="أي نمط" data-text-en="Any Style" selected>أي نمط</option>
+                                    <option value="cinematic" data-text-ar="سينمائي" data-text-en="Cinematic">سينمائي</option>
+                                    <option value="dramatic" data-text-ar="درامي" data-text-en="Dramatic">درامي</option>
+                                    <option value="calm_peaceful" data-text-ar="هادئ/مسالم" data-text-en="Calm/Peaceful">هادئ/مسالم</option>
+                                    <option value="mysterious" data-text-ar="غامض" data-text-en="Mysterious">غامض</option>
+                                    <option value="dreamy" data-text-ar="حالم" data-text-en="Dreamy">حالم</option>
+                                    <option value="vintage_retro" data-text-ar="عتيق/قديم" data-text-en="Vintage/Retro">عتيق/قديم</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                <div id="ad-image-subcategories-container" class="hidden mb-6">
+                    <p id="ad-image-type-label" class="text-center text-slate-300 mb-3">اختر مجال الإعلان:</p>
+                    <div class="flex flex-wrap justify-center gap-2 mb-4">
+                        <button data-sub-category="products" data-sub-category-ar="منتجات" data-sub-category-en="Products" class="sub-category-button active py-2 px-4 rounded-md text-sm">🛍️ <span class="sub-cat-text">منتجات</span></button>
+                        <button data-sub-category="services" data-sub-category-ar="خدمات" data-sub-category-en="Services" class="sub-category-button py-2 px-4 rounded-md text-sm">🛠️ <span class="sub-cat-text">خدمات</span></button>
+                        <button data-sub-category="food_beverage_ad" data-sub-category-ar="طعام ومشروبات" data-sub-category-en="Food & Beverage" class="sub-category-button py-2 px-4 rounded-md text-sm">🍔 <span class="sub-cat-text">طعام ومشروبات</span></button>
+                        <button data-sub-category="travel_tourism_ad" data-sub-category-ar="سفر وسياحة" data-sub-category-en="Travel & Tourism" class="sub-category-button py-2 px-4 rounded-md text-sm">✈️ <span class="sub-cat-text">سفر وسياحة</span></button>
+                        <button data-sub-category="real_estate_ad" data-sub-category-ar="عقارات" data-sub-category-en="Real Estate" class="sub-category-button py-2 px-4 rounded-md text-sm">🏠 <span class="sub-cat-text">عقارات</span></button>
+                        <button data-sub-category="fashion_beauty_ad" data-sub-category-ar="موضة وجمال" data-sub-category-en="Fashion & Beauty" class="sub-category-button py-2 px-4 rounded-md text-sm">💄 <span class="sub-cat-text">موضة وجمال</span></button>
+                        <button data-sub-category="technology_gadgets_ad" data-sub-category-ar="تكنولوجيا وأجهزة" data-sub-category-en="Tech & Gadgets" class="sub-category-button py-2 px-4 rounded-md text-sm">📱 <span class="sub-cat-text">تكنولوجيا وأجهزة</span></button>
+                        <button data-sub-category="automotive_ad" data-sub-category-ar="سيارات ومركبات" data-sub-category-en="Automotive" class="sub-category-button py-2 px-4 rounded-md text-sm">🚗 <span class="sub-cat-text">سيارات ومركبات</span></button>
+                        <button data-sub-category="health_wellness_ad" data-sub-category-ar="صحة وعافية" data-sub-category-en="Health & Wellness" class="sub-category-button py-2 px-4 rounded-md text-sm">💪 <span class="sub-cat-text">صحة وعافية</span></button>
+                        <button data-sub-category="education_training_ad" data-sub-category-ar="تعليم وتدريب" data-sub-category-en="Education" class="sub-category-button py-2 px-4 rounded-md text-sm">🎓 <span class="sub-cat-text">تعليم وتدريب</span></button>
+                        <button data-sub-category="events_ad" data-sub-category-ar="فعاليات ومناسبات" data-sub-category-en="Events" class="sub-category-button py-2 px-4 rounded-md text-sm">🎉 <span class="sub-cat-text">فعاليات</span></button>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="product-name-input" id="product-name-label" class="block text-sm font-medium text-slate-300 mb-1">اسم المنتج/الخدمة:</label>
+                            <input type="text" id="product-name-input" class="form-input" placeholder="مثال: قهوة الصباح الممتازة">
+                        </div>
+                        <div>
+                            <label for="campaign-name-input" id="campaign-name-label" class="block text-sm font-medium text-slate-300 mb-1">اسم الحملة الإعلانية (اختياري):</label>
+                            <input type="text" id="campaign-name-input" class="form-input" placeholder="مثال: ابدأ يومك بنشاط">
+                        </div>
+                    </div>
+                </div>
+                <div id="short-message-subcategories-container" class="hidden mb-6">
+                    <p id="message-type-label" class="text-center text-slate-300 mb-3">اختر نوع الرسالة:</p>
+                    <div class="flex flex-wrap justify-center gap-2 mb-4">
+                        <button data-sub-category="dawah_sm" data-sub-category-ar="دعوية" data-sub-category-en="Dawah" class="sub-category-button active py-2 px-4 rounded-md text-sm">🗣️ <span class="sub-cat-text">دعوية</span></button>
+                        <button data-sub-category="religious_sm" data-sub-category-ar="دينية" data-sub-category-en="Religious" class="sub-category-button py-2 px-4 rounded-md text-sm">🙏 <span class="sub-cat-text">دينية</span></button>
+                        <button data-sub-category="love_sm" data-sub-category-ar="حب وغرام" data-sub-category-en="Love" class="sub-category-button py-2 px-4 rounded-md text-sm">❤️ <span class="sub-cat-text">حب وغرام</span></button>
+                        <button data-sub-category="friendship_sm" data-sub-category-ar="صداقة" data-sub-category-en="Friendship" class="sub-category-button py-2 px-4 rounded-md text-sm">🤗 <span class="sub-cat-text">صداقة</span></button>
+                        <button data-sub-category="congratulations_sm" data-sub-category-ar="تهنئة" data-sub-category-en="Congratulations" class="sub-category-button py-2 px-4 rounded-md text-sm">🎉 <span class="sub-cat-text">تهنئة</span></button>
+                        <button data-sub-category="thanks_sm" data-sub-category-ar="شكر" data-sub-category-en="Thanks" class="sub-category-button py-2 px-4 rounded-md text-sm">😊 <span class="sub-cat-text">شكر</span></button>
+                        <button data-sub-category="apology_sm" data-sub-category-ar="اعتذار" data-sub-category-en="Apology" class="sub-category-button py-2 px-4 rounded-md text-sm">😔 <span class="sub-cat-text">اعتذار</span></button>
+                        <button data-sub-category="condolences_sm" data-sub-category-ar="تعزية" data-sub-category-en="Condolences" class="sub-category-button py-2 px-4 rounded-md text-sm">💔 <span class="sub-cat-text">تعزية</span></button>
+                        <button data-sub-category="formal_sm" data-sub-category-ar="عمل ورسمية" data-sub-category-en="Formal/Business" class="sub-category-button py-2 px-4 rounded-md text-sm">👔 <span class="sub-cat-text">عمل ورسمية</span></button>
+                        <button data-sub-category="morning_evening_sm" data-sub-category-ar="صباحية/مسائية" data-sub-category-en="Morning/Evening" class="sub-category-button py-2 px-4 rounded-md text-sm">☀️🌙 <span class="sub-cat-text">صباحية/مسائية</span></button>
+                        <button data-sub-category="motivational_sm" data-sub-category-ar="تحفيزية" data-sub-category-en="Motivational" class="sub-category-button py-2 px-4 rounded-md text-sm">💪 <span class="sub-cat-text">تحفيزية</span></button>
+                        <button data-sub-category="humorous_sm" data-sub-category-ar="فكاهية" data-sub-category-en="Humorous" class="sub-category-button py-2 px-4 rounded-md text-sm">😂 <span class="sub-cat-text">فكاهية</span></button>
+                        <button data-sub-category="get_well_sm" data-sub-category-ar="أتمنى لك الشفاء" data-sub-category-en="Get Well" class="sub-category-button py-2 px-4 rounded-md text-sm">🌸 <span class="sub-cat-text">أتمنى لك الشفاء</span></button>
+                        <button data-sub-category="birthday_sm" data-sub-category-ar="عيد ميلاد" data-sub-category-en="Birthday" class="sub-category-button py-2 px-4 rounded-md text-sm">🎂 <span class="sub-cat-text">عيد ميلاد</span></button>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label for="short-message-length-options" id="message-length-label" class="block text-sm font-medium text-slate-300 mb-1">اختر طول الرسالة:</label>
+                            <div id="short-message-length-options" class="flex flex-wrap justify-start gap-2">
+                                <button data-length="short" data-length-ar="قصيرة" data-length-en="Short" class="length-option-button active py-2 px-3 rounded-md text-xs">📏 <span class="len-opt-text">قصيرة</span></button>
+                                <button data-length="medium" data-length-ar="متوسطة" data-length-en="Medium" class="length-option-button py-2 px-3 rounded-md text-xs">↔️ <span class="len-opt-text">متوسطة</span></button>
+                                <button data-length="long" data-length-ar="طويلة" data-length-en="Long" class="length-option-button py-2 px-3 rounded-md text-xs">📐 <span class="len-opt-text">طويلة</span></button>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="short-message-dialect-select" id="message-dialect-label" class="block text-sm font-medium text-slate-300 mb-1">اختر اللهجة (اختياري):</label>
+                            <select id="short-message-dialect-select" class="form-select text-sm">
+                                <option value="standard_arabic" data-text-ar="العربية الفصحى" data-text-en="Standard Arabic" selected>العربية الفصحى</option>
+                                <option value="egyptian" data-text-ar="مصرية" data-text-en="Egyptian">مصرية</option>
+                                <option value="libyan" data-text-ar="ليبية" data-text-en="Libyan">ليبية</option>
+                                <option value="jordanian" data-text-ar="أردنية" data-text-en="Jordanian">أردنية</option>
+                                <option value="omani" data-text-ar="عمانية" data-text-en="Omani">عمانية</option>
+                                <option value="saudi" data-text-ar="سعودية" data-text-en="Saudi">سعودية</option>
+                                <option value="emirati" data-text-ar="إماراتية" data-text-en="Emirati">إماراتية</option>
+                                <option value="kuwaiti" data-text-ar="كويتية" data-text-en="Kuwaiti">كويتية</option>
+                                <option value="bahraini" data-text-ar="بحرينية" data-text-en="Bahraini">بحرينية</option>
+                                <option value="qatari" data-text-ar="قطرية" data-text-en="Qatari">قطرية</option>
+                                <option value="lebanese" data-text-ar="لبنانية" data-text-en="Lebanese">لبنانية</option>
+                                <option value="syrian" data-text-ar="سورية" data-text-en="Syrian">سورية</option>
+                                <option value="palestinian" data-text-ar="فلسطينية" data-text-en="Palestinian">فلسطينية</option>
+                                <option value="iraqi" data-text-ar="عراقية" data-text-en="Iraqi">عراقية</option>
+                                <option value="yemeni" data-text-ar="يمنية" data-text-en="Yemeni">يمنية</option>
+                                <option value="sudanese" data-text-ar="سودانية" data-text-en="Sudanese">سودانية</option>
+                                <option value="moroccan" data-text-ar="مغربية" data-text-en="Moroccan">مغربية</option>
+                                <option value="algerian" data-text-ar="جزائرية" data-text-en="Algerian">جزائرية</option>
+                                <option value="tunisian" data-text-ar="تونسية" data-text-en="Tunisian">تونسية</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="short-message-topic-input" id="message-topic-label" class="block text-sm font-medium text-slate-300 mb-1">أضف موضوعًا للرسالة (اختياري - 5 كلمات كحد أقصى):</label>
+                        <input type="text" id="short-message-topic-input" class="form-input" placeholder="مثال: الصبر عند الشدائد">
+                        <p id="short-message-topic-error" class="input-error-message hidden"></p>
+                    </div>
+                </div>
+                 <div id="article-subcategories-container" class="hidden mb-6">
+                    <p id="article-type-label" class="text-center text-slate-300 mb-3">اختر نوع المقال:</p>
+                    <div class="flex flex-wrap justify-center gap-2 mb-4">
+                        <button data-sub-category="scientific_article" data-sub-category-ar="علمي" data-sub-category-en="Scientific" class="sub-category-button active py-2 px-4 rounded-md text-sm">🔬 <span class="sub-cat-text">علمي</span></button>
+                        <button data-sub-category="tech_article" data-sub-category-ar="تقني" data-sub-category-en="Tech" class="sub-category-button py-2 px-4 rounded-md text-sm">💻 <span class="sub-cat-text">تقني</span></button>
+                        <button data-sub-category="history_article" data-sub-category-ar="تاريخي" data-sub-category-en="Historical" class="sub-category-button py-2 px-4 rounded-md text-sm">📜 <span class="sub-cat-text">تاريخي</span></button>
+                        <button data-sub-category="literary_article" data-sub-category-ar="أدبي" data-sub-category-en="Literary" class="sub-category-button py-2 px-4 rounded-md text-sm">✍️ <span class="sub-cat-text">أدبي</span></button>
+                        <button data-sub-category="social_article" data-sub-category-ar="اجتماعي" data-sub-category-en="Social" class="sub-category-button py-2 px-4 rounded-md text-sm">👥 <span class="sub-cat-text">اجتماعي</span></button>
+                        <button data-sub-category="economic_article" data-sub-category-ar="اقتصادي" data-sub-category-en="Economic" class="sub-category-button py-2 px-4 rounded-md text-sm">📈 <span class="sub-cat-text">اقتصادي</span></button>
+                        <button data-sub-category="sports_article" data-sub-category-ar="رياضي" data-sub-category-en="Sports" class="sub-category-button py-2 px-4 rounded-md text-sm">🏅 <span class="sub-cat-text">رياضي</span></button>
+                        <button data-sub-category="travel_article" data-sub-category-ar="سفر وترحال" data-sub-category-en="Travel" class="sub-category-button py-2 px-4 rounded-md text-sm">🌍 <span class="sub-cat-text">سفر وترحال</span></button>
+                        <button data-sub-category="health_article" data-sub-category-ar="صحة وغذاء" data-sub-category-en="Health & Food" class="sub-category-button py-2 px-4 rounded-md text-sm">🥗 <span class="sub-cat-text">صحة وغذاء</span></button>
+                        <button data-sub-category="opinion_article" data-sub-category-ar="رأي" data-sub-category-en="Opinion" class="sub-category-button py-2 px-4 rounded-md text-sm">🗣️ <span class="sub-cat-text">رأي</span></button>
+                    </div>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label for="article-length-options" id="article-length-label" class="block text-sm font-medium text-slate-300 mb-1">اختر طول المقال:</label>
+                            <div id="article-length-options" class="flex flex-wrap justify-start gap-2">
+                                <button data-length="brief" data-length-ar="موجز" data-length-en="Brief" class="length-option-button active py-2 px-3 rounded-md text-xs">📄 <span class="len-opt-text">موجز</span></button>
+                                <button data-length="medium" data-length-ar="متوسط" data-length-en="Medium" class="length-option-button py-2 px-3 rounded-md text-xs">📑 <span class="len-opt-text">متوسط</span></button>
+                                <button data-length="detailed" data-length-ar="مفصل" data-length-en="Detailed" class="length-option-button py-2 px-3 rounded-md text-xs">📚 <span class="len-opt-text">مفصل</span></button>
+                            </div>
+                        </div>
+                         <div>
+                            <label for="article-topic-input" id="article-topic-label" class="block text-sm font-medium text-slate-300 mb-1">أضف موضوعًا للمقال (اختياري - 10 كلمات كحد أقصى):</label>
+                            <input type="text" id="article-topic-input" class="form-input" placeholder="مثال: مستقبل الذكاء الاصطناعي">
+                            <p id="article-topic-error" class="input-error-message hidden"></p>
+                        </div>
+                    </div>
+                </div>
+                <div id="video-subcategories-container" class="hidden mb-6">
+                    <p id="video-type-label" class="text-center text-slate-300 mb-3">اختر نوع الفيديو:</p>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <button data-sub-category="action_video" data-sub-category-ar="أكشن" data-sub-category-en="Action" class="sub-category-button active py-2 px-4 rounded-md text-sm">💥 <span class="sub-cat-text">أكشن</span></button>
+                        <button data-sub-category="drama_video" data-sub-category-ar="دراما" data-sub-category-en="Drama" class="sub-category-button py-2 px-4 rounded-md text-sm">🎭 <span class="sub-cat-text">دراما</span></button>
+                        <button data-sub-category="nature_video" data-sub-category-ar="طبيعة" data-sub-category-en="Nature" class="sub-category-button py-2 px-4 rounded-md text-sm">🌿 <span class="sub-cat-text">طبيعة</span></button>
+                        <button data-sub-category="creative_video" data-sub-category-ar="إبداع" data-sub-category-en="Creative" class="sub-category-button py-2 px-4 rounded-md text-sm">💡 <span class="sub-cat-text">إبداع</span></button>
+                        <button data-sub-category="art_video" data-sub-category-ar="فن الفيديو" data-sub-category-en="Art Video" class="sub-category-button py-2 px-4 rounded-md text-sm">🎨 <span class="sub-cat-text">فن الفيديو</span></button>
+                        <button data-sub-category="cars_video" data-sub-category-ar="سيارات" data-sub-category-en="Cars" class="sub-category-button py-2 px-4 rounded-md text-sm">🚗 <span class="sub-cat-text">سيارات</span></button>
+                        <button data-sub-category="fashion_video" data-sub-category-ar="موضة" data-sub-category-en="Fashion" class="sub-category-button py-2 px-4 rounded-md text-sm">👚 <span class="sub-cat-text">موضة</span></button>
+                        <button data-sub-category="universe_video" data-sub-category-ar="الكون" data-sub-category-en="Universe" class="sub-category-button py-2 px-4 rounded-md text-sm">🌌 <span class="sub-cat-text">الكون</span></button>
+                        <button data-sub-category="sports_video" data-sub-category-ar="رياضة" data-sub-category-en="Sports" class="sub-category-button py-2 px-4 rounded-md text-sm">⚽ <span class="sub-cat-text">رياضة</span></button>
+                        <button data-sub-category="travel_video" data-sub-category-ar="سفر" data-sub-category-en="Travel" class="sub-category-button py-2 px-4 rounded-md text-sm">✈️ <span class="sub-cat-text">سفر</span></button>
+                        <button data-sub-category="technology_video" data-sub-category-ar="تكنولوجيا" data-sub-category-en="Technology" class="sub-category-button py-2 px-4 rounded-md text-sm">🤖 <span class="sub-cat-text">تكنولوجيا</span></button>
+                        <button data-sub-category="cities_video" data-sub-category-ar="مدن" data-sub-category-en="Cities" class="sub-category-button py-2 px-4 rounded-md text-sm">🏙️ <span class="sub-cat-text">مدن</span></button>
+                        <button data-sub-category="food_video" data-sub-category-ar="طعام" data-sub-category-en="Food" class="sub-category-button py-2 px-4 rounded-md text-sm">🍔 <span class="sub-cat-text">طعام</span></button>
+                        <button data-sub-category="animals_video" data-sub-category-ar="حيوانات" data-sub-category-en="Animals" class="sub-category-button py-2 px-4 rounded-md text-sm">🐾 <span class="sub-cat-text">حيوانات</span></button>
+                        <button data-sub-category="abstract_video" data-sub-category-ar="تجريدي" data-sub-category-en="Abstract" class="sub-category-button py-2 px-4 rounded-md text-sm">🌀 <span class="sub-cat-text">تجريدي</span></button>
+                        <button data-sub-category="documentary_video" data-sub-category-ar="وثائقي" data-sub-category-en="Documentary" class="sub-category-button py-2 px-4 rounded-md text-sm">🎞️ <span class="sub-cat-text">وثائقي</span></button>
+                        <button data-sub-category="educational_video" data-sub-category-ar="تعليمي" data-sub-category-en="Educational" class="sub-category-button py-2 px-4 rounded-md text-sm">📚 <span class="sub-cat-text">تعليمي</span></button>
+                        <button data-sub-category="comedy_video" data-sub-category-ar="كوميدي" data-sub-category-en="Comedy" class="sub-category-button py-2 px-4 rounded-md text-sm">😂 <span class="sub-cat-text">كوميدي</span></button>
+                        <button data-sub-category="music_video" data-sub-category-ar="موسيقى" data-sub-category-en="Music" class="sub-category-button py-2 px-4 rounded-md text-sm">🎵 <span class="sub-cat-text">موسيقى</span></button>
+                        <button data-sub-category="gaming_video" data-sub-category-ar="ألعاب فيديو" data-sub-category-en="Gaming" class="sub-category-button py-2 px-4 rounded-md text-sm">🎮 <span class="sub-cat-text">ألعاب فيديو</span></button>
+                        <button data-sub-category="animation_video" data-sub-category-ar="رسوم متحركة" data-sub-category-en="Animation" class="sub-category-button py-2 px-4 rounded-md text-sm">✏️ <span class="sub-cat-text">رسوم متحركة</span></button>
+                        <button data-sub-category="reviews_video" data-sub-category-ar="مراجعات" data-sub-category-en="Reviews" class="sub-category-button py-2 px-4 rounded-md text-sm">🧐 <span class="sub-cat-text">مراجعات</span></button>
+                         <button data-sub-category="vlogs_video" data-sub-category-ar="مدونات فيديو" data-sub-category-en="Vlogs" class="sub-category-button py-2 px-4 rounded-md text-sm">🤳 <span class="sub-cat-text">مدونات فيديو</span></button>
+                    </div>
+                </div>
+                <div id="explore-content-container" class="hidden text-center">
+                    <h3 id="explore-title" class="text-2xl font-semibold mb-4">استكشف إبداعات الآخرين</h3>
+                    <p id="explore-desc" class="text-slate-400">هنا ستجد معرضًا للأعمال الفنية والنصوص التي أنشأها مستخدمون آخرون. (قيد التطوير)</p>
+                </div>
+                <div id="community-content-container" class="hidden text-center">
+                     <h3 id="community-title" class="text-2xl font-semibold mb-4">مجتمع المبدعين</h3>
+                     <p id="community-desc" class="text-slate-400">شارك بمنشوراتك وتفاعل مع أعضاء المجتمع. (قيد التطوير)</p>
+                </div>
+                <div id="prompt-display-area" class="prompt-display p-6 rounded-lg mb-8 bg-slate-800">
+                    <p id="prompt-text" class="text-xl md:text-2xl text-slate-300">اضغط على "توليد فكرة" للبدء!</p>
+                    <div id="loader" class="loader hidden"></div>
+                </div> 
+                <div id="additional-ai-content-display" class="additional-ai-content-display hidden">
+                    <p id="additional-ai-text" class="text-slate-300"></p>
+                    <div id="additional-ai-loader" class="loader hidden mt-2"></div>
+                </div>
+                <div id="ai-feature-buttons-container" class="mt-4 text-center space-x-2 space-x-reverse hidden">
+                    <button id="ad-slogan-btn" class="ai-feature-button py-2 px-4 rounded-md text-sm">✨ <span data-translate-key="generateAdSlogan">توليد شعار إعلاني</span></button>
+                    <button id="article-subheadings-btn" class="ai-feature-button py-2 px-4 rounded-md text-sm">✨ <span data-translate-key="suggestSubheadings">اقتراح عناوين فرعية</span></button>
+                    <button id="programming-steps-btn" class="ai-feature-button py-2 px-4 rounded-md text-sm">✨ <span data-translate-key="firstProgrammingSteps">الخطوات الأولى للتنفيذ</span></button>
+                </div>
+                <div class="flex justify-center space-x-4 space-x-reverse mt-8">
+                    <button id="generate-prompt-btn" class="btn-primary font-bold py-3 px-8 rounded-lg text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                        ✨ <span id="generate-btn-text">توليد فكرة جديدة</span>
+                    </button>
+                    <button id="clear-prompt-btn" class="btn-secondary font-bold py-3 px-6 rounded-lg text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                        🗑️ <span id="clear-btn-text">مسح</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+        <footer class="text-center mt-12 py-6 border-t border-slate-700">
+            <p id="footer-text" class="text-slate-500">&copy; <span id="current-year"></span> مولد الأفكار الإبداعية. جميع الحقوق محفوظة.</p>
+        </footer>
+    </div>
+    <script src="logic.js"></script>
+</body>
+</html>
