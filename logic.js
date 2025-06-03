@@ -202,26 +202,36 @@
 
    // --- Gemini API Configuration ---
 
-   //const GEMINI_API_KEY = "AIzaSyBK4ewwkX91HR0G8z4-hsyPlk3hLt6bLKQ"; 
+   //const GEMINI_API_KEY = "npm install -g vercel "; 
    //const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
    // --- UI Text Translations ---
    // js/config.js
 
    async function generateContent(prompt) {
     try {
-      const response = await fetch(window.CONFIG.PROXY_URL, {
+      const response = await fetch('/api/gemini-proxy', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt })
       });
   
-      if (!response.ok) throw new Error("API request failed");
+      // التحقق من حالة الرد أولاً
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`API Error: ${response.status} - ${errorText}`);
+      }
+  
+      // محاولة تحليل JSON فقط إذا كان الرد ناجحًا
       return await response.json();
+      
     } catch (error) {
-      console.error("Error:", error);
-      return { error: error.message };
+      console.error("Request Failed:", error);
+      return { 
+        error: "Failed to process request",
+        details: error.message
+      };
     }
-  }
+  }  
   
   // Usage example
   generateContent("Explain quantum computing").then(data => {
