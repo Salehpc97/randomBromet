@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Salehpc97/randomBromet/issues"
   },
-  "homepage": "https://github.com/Salehpc97/randomBromet#readme"
+  "homepage": "https://github.com/Salehpc97/randomBromet#readme",
+  "dependencies": {
+    "dotenv": "^16.5.0"
+  }
 }

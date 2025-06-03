@@ -3,6 +3,7 @@
   // --- Gemini API Configuration ---
  
    // --- DOM Elements ---
+   require('dotenv').config();
    const bodyElement = document.body;
    const languageToggleButton = document.getElementById('language-toggle-btn');
    const langBtnText = document.getElementById('lang-btn-text');
@@ -411,7 +412,7 @@
       };
 
        try {
-           const response = await fetch('/api/gemini-proxy.js', {
+           const response = await fetch('/api/gemini-proxy', {
                method: 'POST',
                headers: { 'Content-Type': 'application/json' },
                body: JSON.stringify(payload)
@@ -426,7 +427,8 @@
            if (result.candidates && result.candidates.length > 0 &&
                result.candidates[0].content && result.candidates[0].content.parts &&
                result.candidates[0].content.parts.length > 0) {
-               return result.candidates[0].content.parts[0].text.trim();
+                const result = await response.json();
+                return result.text || result.error || "No response from AI";
            } else {
                console.error("Unexpected API response structure:", result);
                throw new Error("لم يتمكن الذكاء الاصطناعي من توليد فكرة. حاول مرة أخرى.");
